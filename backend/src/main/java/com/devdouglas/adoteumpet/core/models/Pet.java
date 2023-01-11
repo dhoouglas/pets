@@ -34,7 +34,4 @@ public class Pet implements Serializable{
 	
 	@Column(nullable = false)
 	private String photo;
-	
-	
-	
 }
