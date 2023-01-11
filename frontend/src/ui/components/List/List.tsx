@@ -5,7 +5,6 @@ import { TextService } from '../../../data/services/TextService';
 
 interface ListProps {
     pets: Pet[];
-
 }
 
 export default function List(props: ListProps) {
