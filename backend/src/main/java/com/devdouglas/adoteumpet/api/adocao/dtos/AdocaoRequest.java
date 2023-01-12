@@ -2,13 +2,16 @@ package com.devdouglas.adoteumpet.api.adocao.dtos;
 
 import java.math.BigDecimal;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategies.SnakeCaseStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
 import lombok.Data;
 
 @Data
+@JsonNaming(SnakeCaseStrategy.class)
 public class AdocaoRequest {
 	
 	private String email;
-	
 	private BigDecimal valor;
 	
 	private Long petId;
