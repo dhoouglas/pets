@@ -19,11 +19,20 @@ export function useIndex() {
             }
           ]
     ),
-          [petSelected, setPetSelected] = useState<Pet | null>(null);
+          [petSelected, setPetSelected] = useState<Pet | null>(null),
+          [email, setEmail] = useState(''),
+          [value, setValue] = useState(''),
+          [message, setMessage] = useState('')
 
     return {
         listPets,
         petSelected,
-        setPetSelected
+        setPetSelected,
+        email,
+        setEmail,
+        value,
+        setValue,
+        message,
+        setMessage
     };
 }

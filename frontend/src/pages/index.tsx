@@ -8,7 +8,13 @@ export default function Home() {
   const {
     listPets,
     petSelected,
-    setPetSelected
+    setPetSelected,
+    email,
+    setEmail,
+    value,
+    setValue,
+    message,
+    setMessage
   } = useIndex();
 
   return (
@@ -39,6 +45,8 @@ export default function Home() {
               label={'E-mail'}
               type={'email'}
               fullWidth
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </Grid>
           
@@ -47,6 +55,8 @@ export default function Home() {
               label={'Quantia por mês'}
               type={'number'}
               fullWidth
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
             />
           </Grid>
         </Grid>
@@ -67,8 +77,10 @@ export default function Home() {
       </Dialog>
 
       <Snackbar
-        open={false}
-        message={'jfsjahkfkhkjsaf'}
+        open={message.length > 0}
+        message={message}
+        autoHideDuration={2500}
+        onClose={() => setMessage('')}
       />
     </>
       
