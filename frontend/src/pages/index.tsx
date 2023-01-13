@@ -6,7 +6,9 @@ import { useIndex } from "../data/hooks/pages/useIndex";
 export default function Home() {
 
   const {
-    listPets
+    listPets,
+    petSelected,
+    setPetSelected
   } = useIndex();
 
   return (
@@ -22,12 +24,14 @@ export default function Home() {
 
       <List 
         pets={listPets}
+        onSelect={(pet) => setPetSelected(pet)}
       />
 
       <Dialog 
-        open={false}
+        open={petSelected !== null}
         fullWidth
         PaperProps={{ sx: { p: 5 } }}
+        onClose={() => setPetSelected(null)}
       >
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -49,6 +53,7 @@ export default function Home() {
         <DialogActions sx={{ mt: 5 }}>
           <Button
             color={'secondary'}
+            onClick={() => setPetSelected(null)}
           >
             Cancelar
           </Button>

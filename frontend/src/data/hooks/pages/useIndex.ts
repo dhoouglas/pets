@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Pet } from "../../@types/Pet";
 
 export function useIndex() {
     const [listPets, setListPets] = useState(
@@ -17,9 +18,12 @@ export function useIndex() {
               photo: 'https://www.petz.com.br/blog/wp-content/uploads/2020/09/como-cuidar-de-filhotes-de-cachorro-recem-nascidos-2.jpg'
             }
           ]
-    );
+    ),
+          [petSelected, setPetSelected] = useState<Pet | null>(null);
 
     return {
-        listPets
+        listPets,
+        petSelected,
+        setPetSelected
     };
 }
