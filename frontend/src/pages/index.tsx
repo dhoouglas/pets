@@ -14,7 +14,8 @@ export default function Home() {
     value,
     setValue,
     message,
-    setMessage
+    setMessage, 
+    adotar
   } = useIndex();
 
   return (
@@ -70,6 +71,7 @@ export default function Home() {
             
           <Button
             variant={'contained'}
+            onClick={() => adotar()}
           >
             Confirmar adoção
           </Button>

@@ -21,10 +21,16 @@ public class AdoteUmPetApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		var pet = new Pet();
-		pet.setName("Joãozinho");
+		pet.setName("Bidu");
 		pet.setHistory("Historia emocionante");
-		pet.setPhoto("http://www.exemplo.com.br/foto.png");
+		pet.setPhoto("https://image.cachorrogato.com.br/textimages/cachorrinho-ideal");
 		petRepository.save(pet);
+		
+		var pet2 = new Pet();
+		pet2.setName("Scooby");
+		pet2.setHistory("Historia emocionante");
+		pet2.setPhoto("https://www.petz.com.br/blog/wp-content/uploads/2020/09/como-cuidar-de-filhotes-de-cachorro-recem-nascidos-2.jpg");
+		petRepository.save(pet2);
 	}
 
 }
